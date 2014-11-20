@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>炫阅读器计划表</title>
+	<link rel="stylesheet" href="http://xuan.news.cn/cloudnews/xhcms_2014/css/form-style.min.css">
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/jquery.min.js"></script>
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/require.js"></script>
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/require-config.js"></script>
+	<style>
+	.warn{
+		color:#f60;
+	}
+	</style>
+</head>
+<body>
+	<div id="main">
+		
+	</div>
+
+<script type="handlebars" id="tmpl">
+	<h3>{{label}}</h3>
+	<table class="table alternate">
+		<tr>
+			<th>序号</th>
+			<th>任务</th>
+			<th>负责</th>
+			<th>目标</th>
+			<th>注意</th>
+		</tr>
+		{{#each list}}
+		<tr>
+			<td>{{@index}}</td>
+			{{#each this}}
+			<td>{{{this}}}</td>
+			{{/each}}
+		</tr>
+		{{/each}}
+	</table>
+</script>
+<script>
+require(['template'],function(){
+	var compile = Handlebars.compile( $('#tmpl').html().replace(/\s+/g,' ') );
+	var list = {
+		"十月中旬前任务计划":[
+			['图集交互修改','侯继伟','点击图片左右上下翻页','注意考虑后期增加相关图集功能'],
+			['视频交互修改','侯继伟','处理切换时暂停播放功能 & 预览图点击播放功能','&nbsp;'],
+			['按照设计修改细节','张博、时扬扬、侯继伟、姜延年','&nbsp;','&nbsp;'],
+			['列表菜单动态加载','张博','完成动态加载列表并做好翻页关联','不考虑栏目切换和多级栏目列表'],
+			['tab模块, 未开发部分暂时不展示','张博','目前只检测已经开发的模块功能','注意后期恢复展现'],
+			['IE7浏览器升级提示相关','时扬扬','按照设计修改相关提示','要求提示友好'],
+			['IE7浏览器下侧面菜单遮盖BUG','时扬扬、张博','检测相关问题产生原因,解决相关BUG','&nbsp;'],
+			['iPad横屏1024版本完全检测','时扬扬、张博','检测相关问题产生原因,解决相关BUG','&nbsp;']
+		],
+		"十月底前内容":[
+			['iPad宽窄屏适应','时扬扬、张博','检测相关问题产生原因,解决相关BUG','&nbsp;'],
+			['新增新闻封面模块展现','张博、时扬扬','处理封面类型模块,炫知后台响应修改','由此考虑更多可能的模块扩展情况']
+		],
+		"十一月内容":[
+			['新闻百科模块开发','侯继伟','尽量符合设计要求功能,考虑异常格式数据兼容','注意兼容处理'],
+			['新闻问答模块开发','姜延年(暂定)','尽量符合设计要求功能','&nbsp;']
+		]
+	};
+	for (var i in list) {
+		$('#main').append( compile({label:i,list:list[i]}) );
+	};
+
+});
+</script>
+</body>
+</html>

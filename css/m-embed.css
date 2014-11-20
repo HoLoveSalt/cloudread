@@ -1,0 +1,48 @@
+.m-embed object,.m-embed video,.m-embed img{
+	display: block;
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+	background:#000000;
+}
+.m-embed .em-summary{
+	width: 800px;
+	height: 90px;
+	display: table;
+	background: #FFFFFF;
+	vertical-align: middle;
+	margin: 0 auto;
+}
+.m-embed .em-summary span,.em-summary a{
+	float: left;
+}
+.em-summary a:hover{
+	color: #000000;
+	cursor: text; 
+}
+.m-embed .em-summary .em-sName{
+	width: 120px;
+	background: #3e88d5;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 90px;
+}
+.m-embed .em-ta{
+	width: 660px;
+	height: 60px;
+	padding-left: 20px;
+	text-align: left;
+	*float: left;
+	vertical-align: middle;
+	display: table-cell;
+}
+.m-embed .em-summary .em-sText{
+	width: 100%;
+	max-height: 58px;
+	display: block;
+	line-height: 20px;
+	font-size: 14px;
+	text-align: left;
+	vertical-align: middle;
+	overflow:hidden;
+}

@@ -1,0 +1,8 @@
+.m-timeLine .content{
+	overflow: visible;
+}
+.ie6 .tab-timeLine, .ie7 .tab-timeLine,.ie8 .tab-timeLine{
+	display: none;
+}
+.story-timeline{min-height:704px;}
+#story-timeline{z-index:1 !important;}

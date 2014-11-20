@@ -1,0 +1,48 @@
+#cloud-newsPanel {
+    position: absolute;
+    margin: -30px 0 0 10px;
+    width: 382px;
+	min-height: 26px;
+    z-index: 10;
+}
+#cloud-newsPanel ul {
+    padding: 10px 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 350px;
+	min-height: 50px;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px #e1e1e1;
+    border-radius: 5px;
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+    z-index: -1;
+    border: 1px solid #a2c3f5;
+}
+#cloud-newsPanel ul li {
+    padding-left: 10px;
+    line-height: 26px;
+    list-style: none;
+    background: url('http://tmisc.home.news.cn/cloudnews/res/assets/img/common/timelinex.png') no-repeat -24px 11px;
+    font-size: 12px;
+    color: #4d4d4d;
+}
+#cloud-newsPanel .arrow {
+    position: absolute;
+    width: 27px;
+    height: 25px;
+    top: 20px;
+    left: -15px;
+    background: url('http://tmisc.home.news.cn/cloudnews/res/assets/img/common/arrow.png') no-repeat;
+    overflow: hidden;
+}
+#cloud-newsPanel .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,179 @@
+.f-share .popup-inner{
+	font: normal 14px/22px 'Microsoft Yahei';
+	overflow: hidden;
+	width: 400px;	
+}
+
+/* 关键词 share  class加前缀  share-list */
+body,ul,li{
+		margin: 0;
+		padding: 0;
+	}
+	ul,ol{
+		list-style: none;
+	}
+.share {
+	width: 315px;
+	padding: 27px 45px 0 45px;
+}
+.share .in{
+	height: 142px;
+	margin-bottom: 24px;
+	border-bottom: 1px solid #c2c2c2;
+}
+.share .share_title_wrap{
+	width: 76px;
+	height: 35px;
+	background: url(../images/f-share/type-bg.png) no-repeat;
+	font-size: 14px;
+	color: #fff;
+	line-height: 27px;
+	text-align: center;
+	margin: 0 0 15px;
+}
+.share_content_wrap .coa_ul{
+	position: absolute;
+	height: 66px;
+	width: 326px;
+}
+.share_content_wrap .coa_li{
+	display: inline-block;
+	float: left;
+	padding: 0 96px 0 29px;
+	position: relative;
+}
+.share_content_wrap li .fun {
+	color: #000;
+	font: 14px '宋体';
+	text-decoration: none;
+	float: left;
+	width: 38px;
+	height: 38px;
+	/*line-height: 98px;*/
+	/*overflow: hidden;*/
+	position: relative;
+	cursor: pointer;
+	
+}
+.share_content_wrap li .fun:hover {
+	color: #333;
+	opacity: .8;
+	filter: alpha(opacity=80);
+}
+.share_content_wrap .btns {
+	position: absolute;
+	left: -25px;
+	top: 45px;
+	width: 98px;
+}
+.share_content_wrap .to_xuanblog{
+	background: url(../images/f-share/to-xuan-blog.png) no-repeat;
+}
+.share_content_wrap .to_xinhua{
+	background: url(../images/f-share/to-xinhua.png) no-repeat;
+}
+/*baidu 分享插件 start*/
+.bdsharebuttonbox .fixed{
+		display: inline-block;
+		width: 114px;
+		font: 14px '宋体';
+		/*font-size: 14px;*/
+		padding-left: 37px;
+		text-decoration: none;
+		outline: none;
+}
+.bdshare-button-style1-24{
+	zoom: 1;
+	width: 315px;
+	height: 120px;
+	border-bottom: 1px solid #c2c2c2;
+	margin-bottom: 20px;
+}
+.bdshare-button-style1-24 .bds_mshare {
+	background-position: 0 -2444px;
+}
+.bdshare-button-style1-24 .bds_qzone {
+	background-position: 0 -52px;
+}
+.bdshare-button-style1-24 .bds_tsina {
+	background-position: 0 -104px;
+}
+.bdshare-button-style1-24 .bds_bdysc {
+background-position: 0 -3068px;
+}
+.bdshare-button-style1-24 .bds_bdxc {
+background-position: 0 -2548px;
+}
+.bdshare-button-style1-24 .bds_bdhome {
+background-position: 0 -156px;
+}
+.bdshare-button-style1-24 .bds_tieba {
+background-position: 0 -728px;
+}
+.bdshare-button-style1-24 .bds_weixin {
+background-position: 0 -1612px;
+}
+
+.bdshare-button-style1-24 .bds_renren {
+background-position: 0 -208px;
+}
+.bdshare-button-style1-24 .bds_tqq {
+background-position: 0 -260px;
+}
+.bdshare-button-style1-24 .bds_kaixin001 {
+background-position: 0 -312px;
+}
+.bdshare-button-style1-24 .bds_tqf {
+background-position: 0 -364px;
+}
+.bdshare-button-style1-24 .bds_douban {
+background-position: 0 -468px;
+}
+.bdshare-button-style1-24 .bds_tsohu {
+background-position: 0 -520px;
+}
+.bdshare-button-style1-24 .bds_sqq {
+background-position: 0 -2652px;
+}
+.bdshare-button-style1-24 .bds_thx {
+background-position: 0 -2496px;
+}
+.bdshare-button-style1-24 a, .bdshare-button-style1-24 .bds_more {
+	float: left;
+	font-size: 18px;
+	padding-left: 25px;
+	line-height: 24px;
+	height: 24px;
+	background-image: url(../images/f-share/icons_1_24.png?v=7314c5f6.png);
+	_background-image: url(../images/f-share/icons_1_24_debase.png?v=2602b264.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	margin: 6px 6px 6px 0;
+}
+.bdshare-button-style1-24 a:hover {
+color: #333;
+opacity: .8;
+filter: alpha(opacity=80);
+}
+/*baidu 分享插件 end*/
+.bdshare-button-style1-24 #code-table{
+	width: 240px;
+	height: 240px;
+	margin-top: 22px;
+}
+ul,li{
+			padding: 0;
+			margin: 0;
+			border: 0;
+			list-style: none;
+		}
+#code-table ul{
+	background: #fff;
+}
+#code-table ul li{
+	float: left;
+	line-height: 0px;
+	font-size: 0px;
+}
+/*.ie7 #code-table,.ie8 */
+#code-table{display: none;}

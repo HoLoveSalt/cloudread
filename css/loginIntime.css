@@ -1,0 +1,53 @@
+@charset= "utf-8";
+/*
+即时登陆窗口用到的样式表
+支持多皮肤，目前只有一套皮肤
+*/
+.lgnwin0{background-color: #000;opacity: 0.5;filter:alpha(opacity=50); position: fixed; top: 0;left: 0;width: 100%;height: 100%;z-index: 999;}
+.popwin0{position: fixed;top:200px;left: 450px; width:372px;padding: 0 0px 20px 0;z-index:1000;font-size: 12px;color: #000;}
+.popwin0 div.divlgn{background-color: #ebf6ff; width: 100%;}
+div.divlgn div.divTitle{padding: 20px 10px 0 20px;font-family: "微软雅黑";color: #3c3a3a;overflow: hidden; font-weight: bold; font-size: 18px;clear:both;}
+.divTitle .div-text{float:left; width: 315px; height: 20px; line-height: 20px;}
+.divTitle .div-close{float:left;width: 20px; height: 20px;display: inline-block;background: url(lgnintime.png) -350px 0px no-repeat;}
+.divlgn .div-info{padding: 0 30px;}
+.div-info span,.div-verify span{margin-right: 8px; height: 30px; width: 30px; border:0; vertical-align: middle; display: inline-block; padding: 0;	}
+.div-info .div-un{position: relative; margin: 30px 0 0 0;}
+.div-info .div-psw{position: relative; margin: 20px 0;}
+.div-info .div-un span{background: url(lgnintime.png) #ebf6ff 0 0 no-repeat;}
+.div-info .div-psw span{background: url(lgnintime.png) #ebf6ff -46px 0 no-repeat;}
+.div-info input{width: 256px;height: 30px;line-height: 30px; border:none; background-color: white; padding-left: 3px; border-top:1px solid #b9c6cf; border-right: 1px solid #b9c6cf;}
+.div-info .div-verify{margin:20px 0; display: none;}
+.div-verify input{width: 80px;height: 28px;line-height: 28px; padding-left: 3px;background-color: #fff;}
+.div-verify img{height: 28px; margin:0 2px; cursor: pointer;vertical-align:top;}
+.div-verify span.change-pic{height: 28px;width:60px;line-height: 28px;display: inline-block; color: #969696;cursor: pointer;vertical-align:middle;}
+.div-verify p{color: #ff8328;margin-top: 15px; text-align: center;}
+.divlgn .div-lgnconfig{padding: 0 30px; color: #969696; font-weight: bold; width:300px; overflow: hidden; clear: both;}
+.divlgn .div-lgnconfig .div-lgnconfig-left{float: left;line-height: 20px;}
+.divlgn .div-lgnconfig .div-lgnconfig-right{float: right; line-height: 20px;}
+.divlgn .div-lgnconfig label{margin: 0 10px 0 2px; display: inline-block;}
+.divlgn .div-lgnconfig input{vertical-align: middle;margin-top:-3px; margin: 0;padding: 0; display: inline-block;}
+.divlgn .div-lgnconfig a{ display: inline-block; color:#969696;}
+.divlgn .div-lgnconfig a:first-child{color:#5682c2;}
+
+.divlgn .pop-btnlogin{margin: 20px 0 20px 30px; border:none; background-color: #59abff;color: #fff; width: 135px; height: 36px; line-height: 36px; font-size: 18px; box-shadow: 1px 1px 1px 1px #b3bcc2;-ms-box-shadow: 1px 1px 1px 1px #b3bcc2;-moz-box-shadow: 1px 1px 1px 1px #b3bcc2;-webkit-box-shadow: 1px 1px 1px 1px #b3bcc2;}
+.divlgn .pop-btnregist{margin: 20px 30px 20px 20px; border:none; background-color: #ffab3f;color: #fff; width: 135px; height: 36px; line-height: 36px; font-size: 18px; box-shadow: 1px 1px 1px 1px #b3bcc2;-ms-box-shadow: 1px 1px 1px 1px #b3bcc2;-moz-box-shadow: 1px 1px 1px 1px #b3bcc2;-webkit-box-shadow: 1px 1px 1px 1px #b3bcc2;}
+.popwin0 #divCopLoginComshare{background-color: #d6e1ea;padding:10px 5px; box-shadow: inset 0 5px 5px #bdbfc0;}
+#divCopLoginComshare p{text-align: center; margin: 15px 0;}
+#divCopLoginComshare div{overflow: hidden; margin:0 auto; width: 285px; text-align: center}
+.popwin0 #divCopLoginComshare li{background: url(lgnintime.png) no-repeat;padding: 0 10px;float: left;margin:0;}
+.popwin0 #divCopLoginComshare li:hover{cursor: pointer;}
+#divCopLoginComshare li.shareItem0{background-position:-88px 0; }
+#divCopLoginComshare li.shareItem1{background-position:-137px 0; }
+#divCopLoginComshare li.shareItem2{background-position:-183px 0; }
+#divCopLoginComshare li.shareItem3{background-position:-236px 0; }
+#divCopLoginComshare li.shareItem4{background-position:-287px 0; }
+#divCopLoginComshare li.shareItem5{background-position:-380px 0; }
+#divCopLoginComshare li a{display: block;padding-top: 24px; text-align: center; color: #9a9a9a}
+#divCopLoginComshare li a:hover{color: #5a5ada}
+
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}

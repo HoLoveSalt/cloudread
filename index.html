@@ -1,0 +1,113 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html class="ie6"><![endif]-->
+<!--[if IE 7 ]><html class="ie7"><![endif]-->
+<!--[if IE 8 ]><html class="ie8"><![endif]-->
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]--><!--STATUS OK-->
+<head>
+	<meta charset="UTF-8">
+	<title>新华新闻主站</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<link rel="stylesheet" href="css/combine.css?v=<%=new Date().getTime()%>">
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/jquery.min.js"></script>
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/require.js"></script>
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/require-config.js"></script>
+	<script src="js/modernizr.min.js"></script>
+</head>
+<body>
+<div class="header" id="header"><div class="header-inner">
+	<a  class="header-logo"></a>
+	<div class="header-search">
+		<input type="text" id="hSearchInput" placeholder="新闻搜索"  onfocus="$(this).addClass('focus')" onblur="$(this).removeClass('focus')" />
+		<a href="" target="_blank"  class="iconfont">&#xe609;</a>
+	</div>
+	<div class="header-nav">
+		<a href="http://www.news.cn/" target="_blank">新华网首页</a>
+		<a href="http://xuan.news.cn/" target="_blank">炫空间首页</a>
+	</div>
+	<div class="header-login">
+		<a href="http://login.home.news.cn/reg.jsp" target="_blank">注册</a>
+		<a href="" id="LogInBtn">登录</a>
+	</div>
+	<div class="header-user">
+		<a href="http://my.xuan.news.cn/" id="userName" target="_blank"></a>
+		<a href="http://xuan.news.cn/cloudc/logout.xhtm?returnurl= & hash=" id="userOut" class="iconfont">&#xe60a;</a>
+	</div>
+	<!-- <a href="javascript:void(0)" class="header-set iconfont">&#xe604;</a> -->
+</div></div>
+<div class="content">
+	<div class="content-wrapper">
+		<div class="content-inner content-now">
+			<div class="content-loading"></div>
+		</div>
+	</div>
+	<ul class="content-func">
+		<li data-type="f-catalogue"><a href="javascript:void(0);" title="目录" class="iconfont">&#xe603;</a></li>
+		<li data-type="f-share"><a href="javascript:void(0);" title="分享" class="iconfont">&#xe602;</a></li>
+		<!-- <li data-type="f-group"><a href="javascript:void(0);" title="群组" class="iconfont">&#xe600;</a></li> -->
+		<li data-type="f-discuss"><a href="javascript:void(0);" title="评论" class="iconfont">&#xe601;</a></li>
+		<!-- <li data-type="f-help"><a href="javascript:void(0);" class="iconfont">&#xe605;</a></li> -->
+	</ul>
+	<div class="content-page">
+		<a href="javascript:void(0);" class="content-page-prev iconfont">&#xe608;</a>
+		<a href="javascript:void(0);" class="content-page-next iconfont">&#xe607;</a>
+	</div>
+</div>
+<div class="popup f-catalogue">
+	<div class="popup-close iconfont">&#xe606;</div>
+	<div class="popup-inner"><div style="width:400px;">
+		<div class="catalogue-header">
+			<h2 class="clearfix">
+				<span>新华新闻 > <strong>目录</strong></span>
+				<!-- <a href="">订阅</a> -->
+			</h2>
+		</div>
+		<a href="javascript:void(0);" class="catalogue-more" id="prevMore">加载更多新闻</a>
+		<ul>
+			
+		</ul>
+		<a href="javascript:void(0);" class="catalogue-more" id="nextMore">加载更多新闻</a>
+	</div></div>
+</div>
+<!--[if IE 6]> <script>require(['iealert'],function(A){new A});</script> <![endif]-->
+<script type="text/javascript" src="js/combine.js?v=<%=new Date().getTime()%>"></script>
+<script type="text/javascript">
+	//搜素
+	$('.header-search a').click(function(){
+		$(this).attr('href','http://xuan.news.cn/cloudnews/cloudnews/template/search.html?keyword='+$('#hSearchInput').val());
+	});
+	$(document).keydown(function(event){
+		if(event.keyCode == 13){
+			if($('#hSearchInput').hasClass('focus')){
+				$('.header-search a').attr('href','http://xuan.news.cn/cloudnews/cloudnews/template/search.html?keyword='+$('#hSearchInput'	).val()).get(0).click();
+			}
+		}
+	}); 
+	//登陆
+	$.ajax({
+		url: '/cloudc/loadUser.xhtm?loginCheck=true',
+		dataType: 'json',
+		success:function(res){
+			if(res.code == 404){
+				$('.header-login').show();
+			}else{
+				$('.header-user').show();
+				$('#userName').text(res.data.nickName)
+			}
+		}
+	});
+	$('#LogInBtn').click(function(){
+			require(['LoginInTime'],function(LoginInTime){
+				new LoginInTime(); 
+			});
+			return false;
+	});
+	//注销
+	$('#userOut').click(function(){
+			$(this).attr('href','http://xuan.news.cn/cloudc/logout.xhtm?returnurl='+window.location.href.split('#')[0]+'&hash='+window.location.hash.split('#')[1]);
+	});
+</script>
+</body>
+</html>

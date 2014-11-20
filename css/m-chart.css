@@ -1,0 +1,65 @@
+/*class命名规则: 例如echarts 则所有元素加入前缀'e-' 例如'e-title','e-info-name'*/
+/*书写样式表尽量使用完整前缀class名，避免层级过深 例如 .e-info-name span{} 而不是 .echarts .e-info .e-info-name span{}*/
+
+.e-chart{padding:20px;}
+.e-chart span{display: block;font-size:16px;line-height:32px;}
+.e-chart{
+	width:95%;/*840px;*/
+	max-width:855px;
+	min-width:580px;
+	height:538px;
+	margin:50px auto 0px;
+	position:relative;
+	left:-10px;}
+.e-chart .e-showNum{
+	position:absolute;
+	right:0;
+	top:-50px;
+	padding:0px 10px;
+	height:30px;
+	background-color:#92B5D1;
+	color:#FFF;
+	line-height:30px;
+	text-align:center;
+	}
+.e-chart .e-btn{
+	width:50px;
+	height:50px;
+	background-color:#ccc;
+	color:#FFF;
+	position:absolute;
+	line-height:46px;
+	text-align:center;
+	font-size: xx-large;
+	cursor: pointer;}
+.e-chart .e-btn-left{top:236px;  left:10px;}
+.e-chart .e-btn-right{top:236px; right:10px;}
+.e-chart .e-chartShow{
+	width:92%;	/*698px;*/
+	height:500px;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;}
+
+.e-chart  .e-container{
+	width:86%;	/*698px;*/
+	height:530px;
+	margin:0 auto;
+	border:1px solid #ccc;
+	padding-top:20px;
+	position:relative;}
+.e-chart .e-chartShow div canvas{
+	height:500px;
+	}
+
+.e-tab-lists{height:500px;position:relative;}
+	/*
+.e-tab-lists>div{
+	width:698px;
+	height:100%;
+	float:left;}
+	*/
+.e-chart .e-btn-active{background-color:#92B5D1;}
+.m-chart *::selection{background-color:transparent;}
+.m-chart *::-moz-selection{background-color:transparent;}
+.m-chart *::-webkit-selection{background-color:transparent;}

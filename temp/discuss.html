@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>评论</title>
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/jquery.min.js"></script>
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/require.js"></script>
+	<script src="http://xuan.news.cn/cloudnews/xhcms_2014/js/require-config.js"></script>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/iconfont.css">
+	<link rel="stylesheet" href="../css/style.css">
+<style>
+	.m-discuss{
+		width: 640px; 
+		margin: 0 auto;
+		padding: 20px 25px;
+		font: normal 14px/22px 'Microsoft Yahei';
+		background: #fff;
+		overflow: hidden;
+	}
+	.m-discuss h2{
+		color: #3e88d5;
+		font: normal 24px/40px 'Microsoft Yahei';
+		border-bottom: 2px solid #3e88d5;
+		margin-bottom: 14px;
+	}
+	.m-discuss h2 .discuss-num{
+		font-size: 14px;
+		color: #333;
+	}
+	#discuss-area{
+		width: 630px;
+		padding: 4px;
+		background: #f2f2f2;
+		border:1px solid #e6e6e6;
+		height: 60px;
+		resize: none;
+	}
+	.discuss-submit a,.discuss-submit a:hover{
+		color: #fff;
+		background: #3e88d5;
+		padding: 0 .4em;
+		float: right;
+		margin-top: 6px;
+		text-decoration: none;
+		border-radius: 3px;
+	}
+	#discuss-tabs{
+		margin-top: 20px;
+	}
+	#discuss-tabs > ul{
+		border: 1px solid #ccc;
+		background-color: #f2f2f2;
+	    background-image: -webkit-linear-gradient(top, #fff 0%, #ddd 50%, #fff 100%);
+	    background-image: -moz-linear-gradient(top, #fff 0%, #ddd 50%, #fff 100%);
+	    background-image: -ms-linear-gradient(top, #fff 0%, #ddd 50%, #fff 100%);
+	    background-image: -o-linear-gradient(top, #fff 0%, #ddd 50%, #fff 100%);
+	    background-image: linear-gradient(top, #fff 0%, #ddd 50%, #fff 100%);
+	    overflow: hidden;
+	    height: 36px;
+	    margin: 0 auto 10px;
+	}
+	#discuss-tabs > ul > li{
+		border-right: 1px solid #ccc;
+		float: left;
+		height: 36px;
+		line-height: 36px;
+		padding: 0 1em;
+	}
+	#discuss-tabs .ui-tabs-active{
+		background: #fff;
+	}
+	#discuss-tabs .ui-tabs-active a{
+		cursor: default;
+	}
+	#discuss-tabs .userImg{
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	}
+	#discuss-tabs dl{
+		padding: 16px 0;
+	}
+	#discuss-tabs dt{
+		float: left;
+		min-width: 100px;
+		line-height: 40px;
+		color: #999;
+	}
+	#discuss-tabs dt img{
+		float: left;
+		margin-right: .2em;
+	}
+	#discuss-tabs dd{
+		float: left;
+		max-width: 480px;
+		line-height: 22px;
+		padding: 9px;
+	}
+</style>
+</head>
+<body>
+	<div class="m-discuss">
+		<h2>评论 <span class="discuss-num">(totalRows)</span></h2>
+		<div class="discuss-handle">
+			<textarea id="discuss-area" placeholder="评论写在这里"></textarea>
+			<div class="discuss-submit">
+				<a href="javascript:void(0);">发表评论</a>
+				<span>剩余<em id="discuss-area-chars">140</em>字</span>
+			</div>
+		</div>
+		<div id="discuss-tabs">
+			<ul>
+				<li><a href="#discuss-tabs-new">最新评论</a></li>
+				<li><a href="#discuss-tabs-hot">精彩评论</a></li>
+			</ul>
+			<div id="discuss-tabs-new">
+				<div class="tab-inner">
+					<dl class="clearfix">
+						<dt>
+							<img class="userImg" src="http://tpic.home.news.cn/userIcon/s/xiaojingc" alt="xiaojingc">
+							<span class="nickName">{{nickName}}</span>: 
+						</dt>
+						<dd>{{content}}</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>
+							<img class="userImg" src="http://tpic.home.news.cn/userIcon/s/xiaojingc" alt="xiaojingc">
+							<span class="nickName">{{nickName}}</span>: 
+						</dt>
+						<dd>{{content}}</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>
+							<img class="userImg" src="http://tpic.home.news.cn/userIcon/s/xiaojingc" alt="xiaojingc">
+							<span class="nickName">{{nickName}}</span>: 
+						</dt>
+						<dd>{{content}}{{content}}{{content}}{{content}}{{content}}{{content}}{{content}}{{content}}{{content}}</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>
+							<img class="userImg" src="http://tpic.home.news.cn/userIcon/s/xiaojingc" alt="xiaojingc">
+							<span class="nickName">{{nickName}}</span>: 
+						</dt>
+						<dd>{{content}}</dd>
+					</dl>
+				</div>
+			</div>
+			<div id="discuss-tabs-hot">
+				<div class="tab-inner">
+					<dl class="clearfix">
+						<dt>
+							<img class="userImg" src="http://tpic.home.news.cn/userIcon/s/xiaojingc" alt="xiaojingc">
+							<span class="nickName">{{nickName}}</span>: 
+						</dt>
+						<dd>{{content}}</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>
+							<img class="userImg" src="http://tpic.home.news.cn/userIcon/s/xiaojingc" alt="xiaojingc">
+							<span class="nickName">{{nickName}}</span>: 
+						</dt>
+						<dd>{{content}}</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+	require(['tabs'],function(){
+		$('#discuss-tabs').tabs();
+	});
+</script>
+</body>
+</html>
