@@ -16,7 +16,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-didian:before { content: "\e60b"; }
+
 .icon-bbgfenxiang:before { content: "\e602"; }
+
+.icon-chanpinzhanshi:before { content: "\e60c"; }
+
+.icon-lianxiren:before { content: "\e60d"; }
 
 .icon-mulu:before { content: "\e603"; }
 
@@ -26,7 +32,13 @@
 
 .icon-qunzu:before { content: "\e600"; }
 
+.icon-weijiaoyu:before { content: "\e60e"; }
+
 .icon-pinglun:before { content: "\e601"; }
+
+.icon-jiaoxuelou:before { content: "\e60f"; }
+
+.icon-biaoqian:before { content: "\e610"; }
 
 .icon-ordinaryset:before { content: "\e604"; }
 
@@ -36,5 +48,11 @@
 
 .icon-before:before { content: "\e608"; }
 
+.icon-diqiu:before { content: "\e611"; }
+
 .icon-tuichu:before { content: "\e60a"; }
+
+.icon-meitibaodao:before { content: "\e612"; }
+
+.icon-jingdianmenpiao:before { content: "\e613"; }
 

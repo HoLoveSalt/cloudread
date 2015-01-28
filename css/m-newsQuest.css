@@ -1,0 +1,47 @@
+.que-store{
+	position:relative;
+	padding:0 40px;
+	margin:0 auto;
+	margin-bottom:15px;
+	width:70%;
+	min-width:200px;
+	background-color:#fff;
+	border:1px solid #ccc;
+	border-radius:5px;
+}
+.que-store .que-questionTitle{
+	min-height:32px;
+	font: 600 18px/32px "微软雅黑";
+	padding:23px 0px;
+	color:#3E88D5;
+}
+.que-store span.que-questionTitle-logo{
+	position:absolute;
+	left:-17px;
+	top:23px;
+	width:40px;
+	height:47px;
+	background-image: url(../images/quest.png);
+}
+.que-store .que-breakLine{
+	border-bottom:1px solid #ccc;
+}
+.que-store .que-answerBar p:first-child{
+	padding:10px 0;
+	font: 600 14px "微软雅黑";
+	color:#3E88D5;
+}
+.que-store .que-answerBar p.que-answerBar-answers{
+	margin-bottom:26px;
+	font: 600 14px "微软雅黑";
+	color:#3F3F3F;
+}
+.que-store .que-answerBar p.que-answerBar-answers-link{
+	margin-bottom:26px;
+	padding:3px 10px;
+	font: 400 14px "微软雅黑";
+	color:#FFF;
+	width:60px;
+	height:20px;
+	background-color:#64C118;
+}

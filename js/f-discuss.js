@@ -8,8 +8,14 @@ define("discuss",['TEMP','template-init','requestAFrame','tabs','alerts'],functi
 		adComment = '/a/adComment.do',
 		commAll = 'http://comment.home.news.cn/a/newsCommAll.do',
 		commHot = 'http://comment.home.news.cn/a/commentsHot.do',
+		emoticon='/cloudnews/'+location.href.replace(/[\s\S]+#/,"")+'_emoticon.html?t='+new Date().getTime(),
+		hiteMoticon ='http://comment.home.news.cn/a/emoUp?newsId='+'{{newsId}}'+'&emoId='+'{{emoId}}'+'&typeId='+'{{typeId}}',
+		moticonStatus ='http://comment.home.news.cn/a/emoList?newsId='+'{{newsId}}',
 		discuss = 
-				'<div class="discuss-holder"><h2>评论 <span class="discuss-num">(0)</span></h2>'+
+				'<div class="discuss-holder">'+
+				'<div class="xuan_news_face">'+
+				'</div>'+
+				'<h2>评论 <span class="discuss-num">(0)</span></h2>'+
 				'<div class="discuss-handle">'+
 				'	<textarea id="discuss-area" placeholder="评论写在这里"></textarea>'+
 				'	<div class="discuss-submit">'+
@@ -31,6 +37,25 @@ define("discuss",['TEMP','template-init','requestAFrame','tabs','alerts'],functi
 				'		</div>'+
 				'	</div>'+
 				'</div></div>',
+		emoticonHtml =
+				'<p class="emoticontitle">看完新闻的心情如何?</p>'+
+				'	<table>'+
+				'		<tbody>'+
+				'		<tr>'+
+				'{{#each data.itemList}}'+
+				'			<td>'+
+				'				<a class="btn_face" data-emoid="{{id}}" title="{{emoticonTagName}}" data-typeid="{{emoticonTagId}}" data-emotagname="{{emoticonTagName}}">'+
+				'					<img class="face_img" src="{{url}}">'+
+				'					<img class="face_grayImg hide" src="{{grayUrl}}">'+
+				'					<span class="plus_one"></span>'+
+				'					<span class="face_dec">{{name}}</span></a>'+
+				'				</a>'+
+				'				<div class="face_num">[0]</div>'+
+				'			</td>'+
+				'{{/each}}'+
+				'		</tr>'+
+				'		</tbody>'+
+				'	</table>',
 		comment =
 				'{{#each contentAll}}'+
 				'<dl class="clearfix">'+
@@ -81,7 +106,8 @@ define("discuss",['TEMP','template-init','requestAFrame','tabs','alerts'],functi
 		var content = args.content,
 			newsId  = args.data.fileUuid,
 			tempAll = $('<script type="template">'+comment+'</script>'),
-			tempHot = $('<script type="template">'+comment+'</script>');
+			tempHot = $('<script type="template">'+comment+'</script>'),
+			tempemoticon = $('<script type="template">'+emoticonHtml+'</script>');
 		
 		content.html( discuss );
 		
@@ -137,6 +163,80 @@ define("discuss",['TEMP','template-init','requestAFrame','tabs','alerts'],functi
 			});
 		});
 
+		$.ajax({
+			url:emoticon,
+			dataType:"json",
+			success:function(data){
+				if(data.success){
+					var moticonSource = tempemoticon.html();
+					var moticonTemplate = Handlebars.compile(moticonSource);
+					$('.xuan_news_face').append(moticonTemplate(data));
+					$(".xuan_news_face").next("h2").remove();
+					$(".xuan_news_face").after('<p class="emoticontitle">'+'再说点啥吧?'+'</p>');
+					$.ajax({
+						url:moticonStatus.replace('{{newsId}}',newsId),
+						dataType:"jsonp",
+						success:function(data){
+							$(".xuan_news_face a").each(function(){
+								if(data.content.list){
+									for(var i = 0; i < data.content.list.length; i++){
+										if( data.content.list[i].id==$(this).data("emoid")){
+											$(this).next(".face_num").html("["+data.content.list[i].value+"]");
+										}
+									}
+								}
+							});
+
+							if(data.content.flag=="0"){
+								$(".face_img").hide();
+								$(".face_grayImg").show();
+								$(".xuan_news_face a").each(function(){
+									$(this).css({"cursor":"default"})
+								})
+							}else{
+								var bindfuc=function(){
+									var _this=this;
+									$.ajax({
+										url:hiteMoticon.replace('{{emoId}}',$(this).data('emoid')).replace('{{typeId}}', $(this).data('typeid')).replace('{{newsId}}',newsId),
+										dataType:"jsonp",
+										success:function(data){
+											var numTime=0;
+											function topAction(){
+												numTime++;
+												if(numTime == 1){
+													$(".plus_one",$(_this)).animate({opacity:'0'})
+													clearInterval(topAction)
+												}
+											}
+											$(".plus_one",$(_this)).animate({top:'0px', opacity:'1'},function(){setInterval(topAction,1000)});
+											if(data.code){
+												$(".xuan_news_face a").each(function(){
+													$(this).css({"cursor":"default"});
+												})
+												var domAdd = $(_this).next(".face_num");
+												domAdd.html(domAdd.html().replace(/\w/,function(n){
+													return ++n;
+												}));
+												$(".face_img").hide();
+												$(".face_grayImg").show();
+												$(".xuan_news_face a").unbind('click', bindfuc)
+											}
+										}
+									})
+								}
+								$(".xuan_news_face a").bind("click",bindfuc)
+							}
+							
+						}
+					});
+				}else{
+					$(".xuan_news_face").remove();
+				}
+			},
+			error:function(){
+				$(".xuan_news_face").remove();
+			}
+		})
 
 		var t_all = {
 			tmpl: tempAll,

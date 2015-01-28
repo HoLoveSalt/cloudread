@@ -1,7 +1,7 @@
 .f-discuss .popup-inner{
 	font: normal 14px/22px 'Microsoft Yahei';
 	overflow: hidden;
-	width: 600px;	
+	width: 710px;	
 }
 .discuss-holder{
 	padding: 20px 25px;
@@ -89,3 +89,62 @@
 	line-height: 22px;
 	padding: 9px;
 }
+
+/*表情*/
+.xuan_news_face {
+	width: 686px;
+	margin-bottom: 15px;
+	background: #f9fbff;
+}
+.emoticontitle{
+	color: #3e88d5;
+	font: normal 20px/40px 'Microsoft Yahei';
+	margin-bottom: 5px;
+}
+.xuan_news_face table{width: 100%}
+.hide{display: none;}
+
+.xuan_news_face a.btn_face {
+	display: block;
+	width: 77px;
+	height: 110px;
+	cursor: pointer;
+	position: relative;
+	border: 1px solid #f9fbff;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 11.5;
+	z-index: 10;
+}
+.xuan_news_face .plus_one {
+	width: 53px;
+	height: 23px;
+	background: url(http://tmisc.home.news.cn/cloudnews/res/assets/img/xuan-face/plus-one.png) no-repeat;
+	position: absolute;
+	top: 45px;
+	left: 14px;
+	display: block;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.xuan_news_face span.face_dec {
+	display: block;
+	position: absolute;
+	top: 18px;
+	color: #000;
+	width: 77px;
+	text-align: center;
+}
+.xuan_news_face .face_num {
+	color: #999;
+	width: 77px;
+	text-align: center;
+	height: 24px;
+	line-height: 18px;
+}
+.xuan_news_face a.btn_face:hover {
+	border-radius: 12px;
+	border: 1px solid #eff5ff;
+	background: #eff5ff;
+}
+/*表情*/

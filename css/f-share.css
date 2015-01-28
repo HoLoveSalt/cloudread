@@ -44,7 +44,7 @@ body,ul,li{
 }
 .share_content_wrap li .fun {
 	color: #000;
-	font: 14px '宋体';
+	font: 14px '微软雅黑';
 	text-decoration: none;
 	float: left;
 	width: 38px;
@@ -76,7 +76,7 @@ body,ul,li{
 .bdsharebuttonbox .fixed{
 		display: inline-block;
 		width: 114px;
-		font: 14px '宋体';
+		font: 14px '微软雅黑';
 		/*font-size: 14px;*/
 		padding-left: 37px;
 		text-decoration: none;

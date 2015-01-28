@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 加载图集
  * @author houjiwei
  */
@@ -20,8 +20,8 @@ define("gallery", ['TEMP'],function(T){
 			+'			<div class="ga-bg"></div>'
 			+'			<a href="{{origin}}" target="_blank" class="ga-toBigPic"></a>'
 			+'		</li>'
-			+'		<li class="ga-hover ga-mark_left" style="cursor:url(../images/ga-left.ico), auto;"><span class="ga-prev"></span></li>'
-			+'		<li class="ga-hover ga-mark_right" style="cursor:url(../images/ga-right.ico), auto;"><span class="ga-next"></span></li>'
+			+'		<li class="ga-hover ga-mark_left" style="cursor:url(images/ga-left.ico), auto;"><span class="ga-prev"></span></li>'
+			+'		<li class="ga-hover ga-mark_right" style="cursor:url(images/ga-right.ico), auto;"><span class="ga-next"></span></li>'
 			+'		<li class="ga-pointer">'
 			+'		</li>'
 			+'	</ul>'

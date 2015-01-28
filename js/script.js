@@ -475,10 +475,15 @@ require(['TEMP','template'],function(TEMP){
 			return res;
 		},
 		addEvent:function(container,res){
-		
+				
 				var list=container.find('.m-tablist').children();//列表
 				var tabCont=container.find('.m-tabcont');//tab容器
 				if(list.length==1 || container.find('.m-tablist :visible').length==1){list.parent().hide();}//如果只有一个选项，隐藏
+				
+				//评论
+				container.find('.m-pinglun').click(function(){
+					$('#FDiscuss').click();
+				})
 				//点击事件绑定
 				list.click(function(){
 					var _this=$(this);

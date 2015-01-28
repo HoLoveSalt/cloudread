@@ -1,0 +1,132 @@
+.sto-tab li.sto-tab-li a.on,.sto-tab li.sto-tab-li a:hover{
+	/*text-decoration: underline;*/
+	cursor: pointer;
+	color:#08c;
+	background:#fff;
+	border-color:#08c;
+}
+.sto-tab li.sto-tab-li{
+	float:left;padding-bottom:5px;
+	margin-right:10px;
+	font-size:14px;
+	color:#666;
+}
+.sto-tab li.sto-tab-li:first-child{
+	margin-right:50px;
+}
+.sto-tab li.sto-tab-li a{position:relative;
+	float:left;display:block;
+	padding:0 15px;
+	font-size:14px;line-height:30px;
+	border-left:3px solid #999;
+	border-radius:15px;
+
+	background:#fff;
+	transition:all ease-out 0.3s;
+}
+.m-store{
+	min-height:395px;
+}
+.stoContent {
+	clear:both;
+	overflow:hidden;
+	min-width:300px;max-width:800px;
+}
+.stoContent p{
+	position:relative;
+	margin:10px 0;padding-top:10px;
+	float:left;
+	display:block;
+	width:48%;
+	height:90px;
+	border-radius:10px;
+	background-color:#f1f1f1;
+	background-color:rgba(255,255,255,1);
+}
+.stoContent p img{
+	margin:15px;
+	height:75px;
+	width:105px;
+	border-radius:10px;
+}
+.stoContent p>span{
+	/*position:absolute;*/
+	/*right:10px;
+	display:inline-block;
+	width:65%;*/
+	padding:0 20px;display:block;
+	overflow:hidden;
+}
+.stoContent p>span a{display:block;}
+.stoTitle{
+	top:10px;
+	max-height:60px;
+}
+.stoTitle a{
+	/*font: 500 21px/1.4em "微软雅黑";*/
+	font-size:18px;line-height:30px;
+	color: #333;
+}
+
+.stoTitle a:hover {
+	color: #5682C2;
+	transition: .5s color;
+}
+.stoDate{
+	margin-top:10px;
+	font: 200 12px/1em "微软雅黑";
+	color:#111;
+}
+.stoDate span:first-child{
+	color:#999;
+}
+.stoContent p.stoEven{
+		float:right;
+	}
+/*大于1200px*/
+@media screen and (min-width:1200px){
+	.stoContent p{
+		width:48%;
+	}
+}
+/*1200px~900px*/
+@media screen and (max-width:1200px){
+	.stoContent p{
+		width:49%;
+	}
+}
+/*小于920px  单行显示*/
+@media screen and (max-width:920px){
+	.stoContent p{
+		width:100%;
+	}
+	/*
+	.stoContent p span{
+		width:78%;
+	}
+	*/
+}
+/*小于760px  单行显示*/
+/*
+@media screen and (max-width:760px){
+	.stoContent p span{
+		width:70%;
+	}
+}
+*/
+/*小于600px */
+/*
+@media screen and (max-width:600px){
+	.stoContent p span{
+		width:62%;
+	}
+}
+*/
+/*小于500px 
+@media screen and (max-width:500px){
+	.stoContent p span{
+		width:52%;
+	}
+}
+
+*/

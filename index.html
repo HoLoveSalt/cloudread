@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="header" id="header"><div class="header-inner">
-	<a  class="header-logo"></a>
+	<a href="http://xuan.news.cn/cloudnews/cloudnews/template/headline-news.html" class="header-logo"></a>
 	<div class="header-search">
 		<input type="text" id="hSearchInput" placeholder="新闻搜索"  onfocus="$(this).addClass('focus')" onblur="$(this).removeClass('focus')" />
 		<a href="" target="_blank"  class="iconfont">&#xe609;</a>
@@ -47,7 +47,7 @@
 		<li data-type="f-catalogue"><a href="javascript:void(0);" title="目录" class="iconfont">&#xe603;</a></li>
 		<li data-type="f-share"><a href="javascript:void(0);" title="分享" class="iconfont">&#xe602;</a></li>
 		<!-- <li data-type="f-group"><a href="javascript:void(0);" title="群组" class="iconfont">&#xe600;</a></li> -->
-		<li data-type="f-discuss"><a href="javascript:void(0);" title="评论" class="iconfont">&#xe601;</a></li>
+		<li data-type="f-discuss" id="FDiscuss"><a href="javascript:void(0);" title="评论" class="iconfont">&#xe601;</a></li>
 		<!-- <li data-type="f-help"><a href="javascript:void(0);" class="iconfont">&#xe605;</a></li> -->
 	</ul>
 	<div class="content-page">
@@ -60,7 +60,7 @@
 	<div class="popup-inner"><div style="width:400px;">
 		<div class="catalogue-header">
 			<h2 class="clearfix">
-				<span>新华新闻 > <strong>目录</strong></span>
+				<span><strong>目录</strong></span>
 				<!-- <a href="">订阅</a> -->
 			</h2>
 		</div>
@@ -76,12 +76,13 @@
 <script type="text/javascript">
 	//搜素
 	$('.header-search a').click(function(){
-		$(this).attr('href','http://xuan.news.cn/cloudnews/cloudnews/template/search.html?keyword='+$('#hSearchInput').val());
+		var keyvalue=$('#hSearchInput'	).val().replace(/[~#?=]/g , '');
+		$(this).attr('href','http://xuan.news.cn/cloudnews/cloudnews/template/search.html?keyword='+keyvalue);
 	});
 	$(document).keydown(function(event){
 		if(event.keyCode == 13){
 			if($('#hSearchInput').hasClass('focus')){
-				$('.header-search a').attr('href','http://xuan.news.cn/cloudnews/cloudnews/template/search.html?keyword='+$('#hSearchInput'	).val()).get(0).click();
+				$('.header-search a').get(0).click();
 			}
 		}
 	}); 
